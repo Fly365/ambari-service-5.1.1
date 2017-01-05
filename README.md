@@ -7,6 +7,35 @@ On Ambari server, restart Ambari server service (sudo service restart ambari-ser
 
 For more detailed instructions on working with custom services please refer to: https://github.com/Symantec/ambari-cassandra-service
 
+## System Requirements
+
+Prior to deploying the Ambari Elasticsearch Service, there are specific operating system configuration changes needed for Elasticsearch to run properly.
+
+When configuring Elasticsearch to bind to a non-loopback address, Elasticsearch will perform additional system checks called "bootstrap checks".  If these bootstrap checks fail, Elasticsearch will shutdown.  You can read more about those checks here: <https://www.elastic.co/guide/en/elasticsearch/reference/current/bootstrap-checks.html>
+
+### /etc/security/limits.conf
+
+Modify */etc/security/limits.conf* to include the following settings:
+
+```
+elasticsearch    -       nofile         65536
+elasticsearch    -       nproc          2048
+elasticsearch    -       memlock        unlimited
+```
+
+NOTE: This assumes that elasticsearch is the user configured to run Elasticsearch via the Ambari configuration.
+
+### /etc/sysctl.conf
+
+Modify */etc/sysctl.conf* to include the following settings:
+
+```
+# Controls mmap counts
+vm.max_map_count = 262144
+```
+
+You can read more about Elasticsearch configuration settings here: <https://www.elastic.co/guide/en/elasticsearch/reference/current/system-config.html>
+
 # Contributions
 Prior to receiving information from any contributor, Symantec requires that all contributors complete, sign, and submit Symantec Personal Contributor Agreement (SPCA). The purpose of the SPCA is to clearly define the terms under which intellectual property has been contributed to the project and thereby allow Symantec to defend the project should there be a legal dispute regarding the software at some future time. A signed SPCA is required to be on file before an individual is given commit privileges to the Symantec open source project. Please note that the privilege to commit to the project is conditional and may be revoked by Symantec.
 
