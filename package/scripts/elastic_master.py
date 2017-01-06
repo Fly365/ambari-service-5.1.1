@@ -31,6 +31,11 @@ class Elasticsearch(Script):
         )
         Execute(cmd)
 
+        cmd = "pip install requests".format(
+            params.tmp_dir
+        )
+        Execute(cmd)
+
         print 'Install the Master'
         # self.install_packages(env)
     def configure(self, env):
