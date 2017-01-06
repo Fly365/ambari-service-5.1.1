@@ -26,6 +26,11 @@ class Elasticsearch(Script):
             params.tmp_dir
         )
         Execute(cmd)
+
+        cmd = "cd {}; rm -f elasticsearch-5.1.1.rpm".format(
+            params.tmp_dir
+        )
+        Execute(cmd)
         print 'Install the Slave'
         # self.install_packages(env)
         configure()

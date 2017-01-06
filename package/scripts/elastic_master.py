@@ -26,10 +26,15 @@ class Elasticsearch(Script):
         )
         Execute(cmd)
 
+        cmd = "cd {}; rm -f elasticsearch-5.1.1.rpm".format(
+            params.tmp_dir
+        )
+        Execute(cmd)
+
         print 'Install the Master'
         # self.install_packages(env)
         configure()
-        
+
     def configure(self, env):
         import params
         env.set_params(params)
