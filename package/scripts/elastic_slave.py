@@ -25,7 +25,7 @@ class Elasticsearch(Script):
         cmd = "cd {}; rpm --install elasticsearch-5.1.1.rpm".format(
             params.elastic_home
         )
-        Execute(cmd, user=params.elastic_user)
+        Execute(cmd)
         print 'Install the Slave'
         # self.install_packages(env)
     def configure(self, env):
