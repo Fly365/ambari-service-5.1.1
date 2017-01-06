@@ -3,7 +3,7 @@
     <schemaVersion>2.0</schemaVersion>
     <services>
         <service>
-            <name>elasticsearch</name>
+            <name>Elasticsearch</name>
             <displayName>elasticsearch</displayName>
             <comment>Indexing and Search</comment>
             <version>5.1.1</version>

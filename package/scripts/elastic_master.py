@@ -15,12 +15,15 @@ class Elasticsearch(Script):
     def install(self, env):
         import params
         env.set_params(params)
-        cmd = "wget {} -o /tmp/elasticsearch-5.1.1.rpm".format(
+        cmd = "cd {}; wget {}".format(
+            params.elastic_home,
             params.elastic_rpm_key
         )
         Execute(cmd, user=params.elastic_user)
 
-        cmd = "rpm --install /tmp/elasticsearch-5.1.1.rpm"
+        cmd = "cd {}; rpm --install elasticsearch-5.1.1.rpm".format(
+            params.elastic_home
+        )
         Execute(cmd, user=params.elastic_user)
 
         print 'Install the Master'
