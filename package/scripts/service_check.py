@@ -14,11 +14,11 @@ class ServiceCheck(Script):
         import params
         env.set_params(params)
 
-	print("Running Elastic search  service check", file=sys.stdout)
+	    print("Running Elastic search  service check", file=sys.stdout)
         # There is a race condition by the time the BDSE server starts and service checks.  Hence added the below sleep for 20 seconds
         time.sleep(20)
-    	payload = {'name': 'Buddy.  Dont Worry, I am Fine '} 
-	r = requests.get('http://localhost:9200/',params=payload) 
+    	payload = {'name': 'Buddy.  Dont Worry, I am Fine '}
+        r = requests.get('http://localhost:9200/',params=payload)
 
         if r.status_code == 200:
 	    print(r.json(), file=sys.stdout)

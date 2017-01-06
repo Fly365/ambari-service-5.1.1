@@ -6,7 +6,7 @@ import re
 from resource_management import *
 
 def properties_inline_template(configurations):
-  return source.InlineTemplate('''{% for key, value in configurations_dict.items() %}{{ key }}={{ value }}
+    return source.InlineTemplate('''{% for key, value in configurations_dict.items() %}{{ key }}={{ value }}
 {% endfor %}''', configurations_dict=configurations)
 
 def properties_config(filename, configurations = None, conf_dir = None,
