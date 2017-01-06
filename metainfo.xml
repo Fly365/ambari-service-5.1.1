@@ -6,7 +6,7 @@
             <name>elasticsearch</name>
             <displayName>elasticsearch</displayName>
             <comment>Indexing and Search</comment>
-            <version>1.7.1</version>
+            <version>5.1.1</version>
             <components>
                 <component>
                     <name>MASTER</name>
@@ -36,7 +36,7 @@
                     <osFamily>any</osFamily>
                     <packages>
                         <package>
-                            <name>elasticsearch-1.7.1</name>
+                            <name>elasticsearch</name>
                         </package>
                     </packages>
                 </osSpecific>

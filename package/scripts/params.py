@@ -11,6 +11,8 @@ config = Script.get_config()
 
 elastic_home = '/etc/elasticsearch/'
 elastic_bin = '/usr/share/elasticsearch/bin/'
+elastic_download = 'https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.1.1.tar.gz'
+elastic_rpm_key = 'https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.1.1.rpm'
 
 conf_dir = "/etc/elasticsearch"
 elastic_user = config['configurations']['elastic-env']['elastic_user']

@@ -16,12 +16,19 @@ class Elasticsearch(Script):
     def install(self, env):
         import params
         env.set_params(params)
+        cmd = "wget {} -o /tmp/elasticsearch.rpm".format(
+            params.elastic_rpm_key
+        )
+        Execute(cmd, user=params.elastic_user)
+
+        cmd = "rpm --install /tmp/elasticsearch.rpm"
+        Execute(cmd, user=params.elastic_user)
         print 'Install the Slave'
-        self.install_packages(env)
+        # self.install_packages(env)
     def configure(self, env):
         import params
         env.set_params(params)
-        slave()   
+        slave()
     def stop(self, env):
         import params
         env.set_params(params)
@@ -43,5 +50,3 @@ class Elasticsearch(Script):
         print 'Status of the Slave'
 if __name__ == "__main__":
     Elasticsearch().execute()
-
-
