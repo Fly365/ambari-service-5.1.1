@@ -14,7 +14,7 @@ class ServiceCheck(Script):
         import params
         env.set_params(params)
 
-	    print("Running Elastic search  service check", file=sys.stdout)
+        print("Running Elastic search  service check", file=sys.stdout)
         # There is a race condition by the time the BDSE server starts and service checks.  Hence added the below sleep for 20 seconds
         time.sleep(20)
     	payload = {'name': 'Buddy.  Dont Worry, I am Fine '}
