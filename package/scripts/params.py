@@ -18,6 +18,7 @@ elastic_rpm_key = 'https://artifacts.elastic.co/downloads/elasticsearch/elastics
 conf_dir = "/etc/elasticsearch"
 elastic_user = config['configurations']['elastic-env']['elastic_user']
 user_group = config['configurations']['elastic-env']['user_group']
+
 log_dir = config['configurations']['elastic-env']['elastic_log_dir']
 pid_dir = '/var/run/elasticsearch'
 pid_file = '/var/run/elasticsearch/elasticsearch.pid'
