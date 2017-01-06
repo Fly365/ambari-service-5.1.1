@@ -19,7 +19,7 @@ class Elasticsearch(Script):
             params.tmp_dir,
             params.elastic_rpm_key
         )
-        Execute(cmd, user=params.elastic_user)
+        Execute(cmd)
 
         cmd = "cd {}; rpm --install elasticsearch-5.1.1.rpm".format(
             params.tmp_dir
