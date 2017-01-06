@@ -28,6 +28,8 @@ class Elasticsearch(Script):
 
         print 'Install the Master'
         # self.install_packages(env)
+        configure()
+        
     def configure(self, env):
         import params
         env.set_params(params)
