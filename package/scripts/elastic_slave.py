@@ -17,13 +17,13 @@ class Elasticsearch(Script):
         import params
         env.set_params(params)
         cmd = "cd {}; wget {}".format(
-            params.elastic_home,
+            params.tmp_dir,
             params.elastic_rpm_key
         )
         Execute(cmd, user=params.elastic_user)
 
         cmd = "cd {}; rpm --install elasticsearch-5.1.1.rpm".format(
-            params.elastic_home
+            params.tmp_dir
         )
         Execute(cmd)
         print 'Install the Slave'

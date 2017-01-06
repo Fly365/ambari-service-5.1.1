@@ -9,6 +9,7 @@ import status_params
 # server configurations
 config = Script.get_config()
 
+tmp_dir = '/tmp/'
 elastic_home = '/etc/elasticsearch/'
 elastic_bin = '/usr/share/elasticsearch/bin/'
 elastic_download = 'https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.1.1.tar.gz'
